@@ -1,0 +1,33 @@
+name: "LLM Cost Check"
+description: "Find the OpenAI, Anthropic and Gemini models in your code and flag price rises, legacy models and cheaper options."
+author: "AiGanak"
+branding:
+  icon: "dollar-sign"
+  color: "purple"
+inputs:
+  path:
+    description: "Folder to scan, relative to the repository root."
+    default: "."
+  comment:
+    description: "On pull requests, post or update one comment with the findings (needs pull-requests: write)."
+    default: "true"
+  fail-on:
+    description: "Fail the check on: none, price-increase, legacy, unknown or any (comma-separated)."
+    default: "none"
+  monthly-input-tokens:
+    description: "Optional. Your monthly input tokens per model, to show dollar figures (e.g. 50000000)."
+    default: ""
+  monthly-output-tokens:
+    description: "Optional. Your monthly output tokens per model."
+    default: ""
+  github-token:
+    description: "Token used to read the pull request and post the comment."
+    default: ${{ github.token }}
+outputs:
+  models:
+    description: "Comma-separated model IDs found."
+  warnings:
+    description: "Number of warnings (price increases, legacy or preview models, unknown models)."
+runs:
+  using: "node24"
+  main: "index.js"
