@@ -27,7 +27,7 @@ jobs:
   llm-cost:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: AiGanak/llm-cost-action@v1.0.0
         with:
           fail-on: none                    # or: price-increase, legacy, unknown, any
