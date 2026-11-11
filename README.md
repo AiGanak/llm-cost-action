@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: AiGanak/llm-cost-action@v1.0.0
+      - uses: AiGanak/llm-cost-action@v1.1.0
         with:
           fail-on: none                    # or: price-increase, legacy, unknown, any
           # monthly-input-tokens: 50000000  # optional, adds dollar figures
