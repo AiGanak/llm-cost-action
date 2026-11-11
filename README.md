@@ -65,7 +65,7 @@ And when a pull request moves from GPT-6.1 Sol to GPT-6.1 Terra with `monthly-in
 Set limits and the check fails any pull request that breaks them:
 
 ```yaml
-      - uses: AiGanak/llm-cost-action@v1.1.0
+      - uses: AiGanak/llm-cost-action@v1.2.0
         with:
           prompt-files: prompts/**/*.md
           max-prompt-tokens: 2000     # no prompt file above ~2,000 tokens
